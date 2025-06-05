@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   All Tools Portal
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+  <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+   <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+    <a href="index.html" class="text-2xl font-bold"> All Tools Portal
+    </a>
+    <nav class="space-x-6 hidden sm:flex text-sm font-semibold">
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="#home" id="nav-home">
+      Home
+     </a>
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="#categories" id="nav-categories">
+      Categories
+     </a>
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="#popular" id="nav-popular-tools"> Popular Tools
+     </a>
+    </nav>
+    <button aria-label="Toggle menu" class="sm:hidden focus:outline-none focus:ring-2 focus:ring-white rounded" id="mobile-menu-button">
+     <i class="fas fa-bars text-xl">
+     </i>
+    </button>
+   </div>
+   <nav class="sm:hidden bg-blue-800 hidden" id="mobile-menu">
+    <a class="block px-4 py-2 border-t border-blue-700 hover:bg-blue-700 focus:outline-none focus:bg-blue-700" href="#home" id="mobile-nav-home">
+     Home
+    </a>
+    <a class="block px-4 py-2 border-t border-blue-700 hover:bg-blue-700 focus:outline-none focus:bg-blue-700" href="#categories" id="mobile-nav-categories">
+     Categories
+    </a>
+    <a class="block px-4 py-2 border-t border-blue-700 hover:bg-blue-700 focus:outline-none focus:bg-blue-700" href="#popular" id="mobile-nav-popular-tools"> Popular Tools
+    </a>
+   </nav>
+  </header>
+
+  <main class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
+   <section class="mb-12" id="home">
+    <h2 class="text-center text-3xl font-bold text-blue-900 mb-6">
+     Find Your Tool
+    </h2>
+    <form class="max-w-xl mx-auto flex items-center border border-gray-300 rounded-md overflow-hidden focus-within:ring-2 focus-within:ring-blue-600" id="search-form">
+     <input aria-label="Search tools by name" autocomplete="off" class="flex-grow px-4 py-3 text-gray-900 placeholder-gray-400 focus:outline-none" id="search-input" placeholder="Search tools by name or description..." type="search"/>
+     <button aria-label="Search" class="bg-blue-900 text-white px-5 py-3 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-600" type="submit">
+      <i class="fas fa-search">
+      </i>
+     </button>
+    </form>
+   </section>
+
+   <section class="mb-12" id="categories">
+    <h2 class="text-center text-2xl font-semibold text-blue-900 mb-6">
+     Categories
+    </h2>
+    <div class="flex flex-wrap justify-center gap-4">
+     <button class="category-btn bg-blue-700 hover:bg-blue-800 text-white font-semibold px-5 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600" data-category="pdf">
+      PDF Tools
+     </button>
+     <button class="category-btn bg-green-700 hover:bg-green-800 text-white font-semibold px-5 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-green-600" data-category="image">
+      Image Tools
+     </button>
+     <button class="category-btn bg-yellow-700 hover:bg-yellow-800 text-white font-semibold px-5 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-600" data-category="seo">
+      SEO Tools
+     </button>
+     <button class="category-btn bg-indigo-700 hover:bg-indigo-800 text-white font-semibold px-5 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-600" data-category="text">
+      Text Tools
+     </button>
+     <button class="category-btn bg-red-700 hover:bg-red-800 text-white font-semibold px-5 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600" data-category="video">
+      Video Tools
+     </button>
+    </div>
+   </section>
+
+   <section class="mb-12" id="popular"> <h2 class="text-center text-2xl font-semibold text-blue-900 mb-6" id="all-tools-main-heading">
+     All Available Tools
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="home-all-tools-grid">
+     </div>
+   </section>
+
+   <section class="mb-12 hidden" id="tools-list">
+    <h2 class="text-center text-2xl font-semibold text-blue-900 mb-6" id="tools-list-title">
+     Tools List
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="tools-list-container">
+     </div>
+    <div class="text-center mt-8">
+     <button class="bg-gray-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600" id="back-to-home">
+      <i class="fas fa-arrow-left mr-2"></i>Back to Home
+     </button>
+    </div>
+   </section>
+
+   <section class="max-w-2xl mx-auto border border-gray-300 rounded-lg p-6 md:p-8 shadow-lg hidden bg-slate-50" id="tool-detail">
+    <div class="flex justify-center mb-6">
+     <img alt="Tool Icon" class="w-28 h-28 object-contain rounded-md shadow-md" id="tool-detail-icon" loading="lazy" src=""/>
+    </div>
+    <h2 class="text-center text-3xl font-bold text-blue-900 mb-3" id="tool-detail-name">
+     Tool Name
+    </h2>
+    <p class="text-center text-gray-700 mb-6 text-md" id="tool-detail-description">
+     Tool description goes here.
+    </p>
+    <div class="flex justify-center items-center mb-8 space-x-2" id="tool-detail-score">
+     </div>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 flex-wrap mb-8">
+     <a class="text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 focus:outline-none focus:ring-2 text-center" href="#" id="tool-detail-go" rel="noopener noreferrer" target="_blank">
+      <i class="fas fa-external-link-alt mr-2"></i>Go to Tool
+     </a>
+     <a class="text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 focus:outline-none focus:ring-2 text-center" href="#" id="tool-detail-tutorial" rel="noopener noreferrer" target="_blank">
+      <i class="fas fa-book-open mr-2"></i>Tutorial
+     </a>
+     <a class="text-white px-8 py-3 rounded-md font-semibold hover:opacity-90 focus:outline-none focus:ring-2 text-center" href="#" id="tool-detail-faq" rel="noopener noreferrer" target="_blank">
+      <i class="fas fa-question-circle mr-2"></i>FAQs
+     </a>
+    </div>
+    <div class="text-center mt-6">
+     <button class="bg-gray-700 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600" id="back-to-tools">
+      <i class="fas fa-arrow-left mr-2"></i>Back to Tools List
+     </button>
+    </div>
+   </section>
+  </main>
+
+  <footer class="bg-blue-900 text-white py-6 mt-auto" id="contact-footer">
+   <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-sm">
+    <p>
+     &copy; <script>document.write(new Date().getFullYear())</script> All Tools Portal. All rights reserved.
+    </p>
+    <div class="space-x-4 mt-2 sm:mt-0">
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="mailto:help@example.com"> Help
+     </a>
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="mailto:contact@example.com"> Contact
+     </a>
+     <a class="hover:underline focus:outline-none focus:ring-2 focus:ring-white rounded" href="privacy.html">
+      Privacy
+     </a>
+    </div>
+   </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+
+  <script>
+   const mobileMenuButtonGlobal = document.getElementById('mobile-menu-button');
+   const mobileMenuGlobal = document.getElementById('mobile-menu');
+   if (mobileMenuButtonGlobal && mobileMenuGlobal) {
+       mobileMenuButtonGlobal.addEventListener('click', () => {
+         mobileMenuGlobal.classList.toggle('hidden');
+       });
+   }
+  </script>
+ </body>
+</html>

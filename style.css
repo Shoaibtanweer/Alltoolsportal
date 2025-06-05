@@ -1,0 +1,34 @@
+/* styles.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth; /* For smoother anchor link scrolling */
+}
+
+/* Optional: Add a subtle hover effect for all tool cards globally if desired */
+.tool-card:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-lg */
+}
+
+/* Ensure focus states are noticeable for accessibility */
+.tool-card:focus-visible {
+  outline: 2px solid theme('colors.blue.500');
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar (optional, for WebKit browsers like Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
