@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://passwordbuilder.incwi.com/sitemap.xml
+Sitemap: https://Alltools.incwi.com/sitemap.xml
